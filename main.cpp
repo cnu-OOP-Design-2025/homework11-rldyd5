@@ -44,7 +44,14 @@ void doTest3() {
     // Zombie 캐릭터를 players에 추가
     // Skeleton 캐릭터를 players에 추가
     // Lich 캐릭터를 players에 추가
+    auto zombie = make_shared<Zombie>();
+    auto skeleton = make_shared<Skeleton>();
+    auto lich = make_shared<Lich>();
 
+    players.push_back(make_shared<UndeadAdapter>(zombie)); 
+    players.push_back(make_shared<UndeadAdapter>(skeleton)); 
+    players.push_back(make_shared<UndeadAdapter>(lich)); 
+    
 
     for(auto player: players){
         cout << "-------------------------------------------------------------" << endl;
